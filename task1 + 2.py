@@ -1,3 +1,44 @@
+task1
+import asyncio
+from random import randint
+import time
+import datetime
+
+start_time = time.time()
+
+async def load_texture():
+    random_time = randint(2, 3)
+    await asyncio.sleep(random_time)
+    return f"Texture loaded, time: {datetime.datetime.now().time()}"
+
+
+async def load_sound():
+    await asyncio.sleep(2)
+    return f"Sound loaded, time: {datetime.datetime.now().time()}"
+
+async def load_scripts():
+    random_time2 = randint(2, 4)
+    await asyncio.sleep(random_time2)
+
+    return f"Scripts loaded, time: {datetime.datetime.now().time()}"
+
+async def load_levels():
+    random_time3 = randint(3, 5)
+    await asyncio.sleep(random_time3)
+    return f"Levels loaded, time: {datetime.datetime.now().time()}"
+
+async def main():
+    results = await asyncio.gather(load_texture(), load_sound(), load_scripts(), load_levels())
+    for i in results:
+        print(i)
+
+asyncio.run(main())
+end_time = time.time()
+elapsed_time = round(end_time - start_time, 2)
+print('All resources loaded in ', elapsed_time, 'seconds')
+
+
+task2
 var 1
 import asyncio
 import time
