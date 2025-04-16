@@ -69,9 +69,6 @@ async def player_actions():
 
         await asyncio.sleep(2)
         print(f'Action: {random_action}, {datetime.datetime.now().time()}')
-        # if random_action == "Game over":
-        #     break
-
 
 
 async def main():
